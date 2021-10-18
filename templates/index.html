@@ -17,6 +17,7 @@
   {% if  allTodos|length == 0 %}
     
   {% else %}
+  <div class="table-responsive">
   <table class="container table table-striped table-sm my-3">
     <thead>
       <tr>
@@ -40,5 +41,6 @@
       {% endfor %}
     </tbody>
   </table>
+  </div>
   {% endif %}
 {% endblock index %}
