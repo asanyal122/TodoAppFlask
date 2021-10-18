@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block update %}
+
+<form class="container form-control form-dark my-3" action="\update\{{todo.id}}" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputTodo" class="form-label">Todo Name</label>
+      <input type="text" class="form-control" name="exampleInputTodo" id="exampleInputTodo" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputDesc" class="form-label">Description</label>
+      <input type="text" class="form-control" name="exampleInputDesc" id="exampleInputDesc">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    
+{% endblock update %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block index %}
+
+  <form class="container form-control form-dark my-3" action="\" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputTodo" class="form-label">Todo Name</label>
+      <input type="text" class="form-control" name="exampleInputTodo" id="exampleInputTodo" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputDesc" class="form-label">Description</label>
+      <input type="text" class="form-control" name="exampleInputDesc" id="exampleInputDesc">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <table class="container table table-striped table-sm my-3">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Last Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in allTodos %}
+        <tr>
+          <td>{{todo.id}}</td>
+          <td>{{todo.todoname}}</td>
+          <td>{{todo.desc}}</td>
+          <td>{{todo.lastupdate}}</td>
+          <td>
+            <a href="/delete/{{todo.id}}" type="button" class="btn btn-sm btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock index %}
