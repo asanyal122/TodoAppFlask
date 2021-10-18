@@ -14,6 +14,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
+  {% if  allTodos|length == 0%}
+    
+  {% else %}
   <table class="container table table-striped table-sm my-3">
     <thead>
       <tr>
@@ -37,4 +40,5 @@
       {% endfor %}
     </tbody>
   </table>
+  {% endif %}
 {% endblock index %}
